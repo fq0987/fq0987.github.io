@@ -1,0 +1,17 @@
+{
+  "$comment": "Every string on this site lives in src/content. Components import from src/lib/content.ts and never contain copy. Fields are empty until Fatemeh supplies them. Nothing here may be invented.",
+  "name": "",
+  "nameConfirmed": false,
+  "tagline": "",
+  "location": "",
+  "email": "",
+  "links": [],
+  "navLabels": {
+    "home": "Home",
+    "work": "Work",
+    "about": "About",
+    "interests": "Interests",
+    "skills": "Skills",
+    "resume": "Resume"
+  }
+}

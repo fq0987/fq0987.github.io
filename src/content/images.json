@@ -1,0 +1,4 @@
+{
+  "$comment": "Intrinsic pixel dimensions for every image in public/. Recorded here and passed explicitly to next/image so nothing shifts on load. Image optimization is off under static export, so each file is resized and compressed by hand before it is committed.",
+  "images": {}
+}
