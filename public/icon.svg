@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Soft Glass mark">
+  <title>Soft Glass</title>
+  <defs>
+    <linearGradient id="pane" x1="14%" y1="6%" x2="86%" y2="94%">
+      <stop offset="0%" stop-color="#FFFBFC"/>
+      <stop offset="46%" stop-color="#F7D2E1"/>
+      <stop offset="100%" stop-color="#CFE4F8"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#CC3F7A"/>
+      <stop offset="52%" stop-color="#7A4FD6"/>
+      <stop offset="100%" stop-color="#1A63C8"/>
+    </linearGradient>
+    <linearGradient id="spec" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="64" height="64" rx="14" fill="#FBF4F7"/>
+
+  <!-- the caustic pooling under the pane -->
+  <ellipse cx="38" cy="47" rx="19" ry="8" fill="#CC3F7A" opacity="0.16"/>
+  <ellipse cx="27" cy="45" rx="15" ry="7" fill="#1A63C8" opacity="0.14"/>
+
+  <!-- the pane itself, tilted the way glass sits when you hold it to the light -->
+  <g transform="rotate(-12 32 32)">
+    <rect x="17" y="12" width="30" height="40" rx="7" fill="url(#pane)"/>
+    <rect x="17" y="12" width="30" height="40" rx="7" fill="none" stroke="url(#rim)" stroke-width="2.5"/>
+    <!-- the bright specular lip along the top edge -->
+    <rect x="20.5" y="15" width="23" height="12" rx="4" fill="url(#spec)"/>
+  </g>
+</svg>
