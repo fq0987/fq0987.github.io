@@ -60,6 +60,24 @@ const plexMono = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
+
+  /**
+   * The icon set. Every file is committed to public/ and served from this
+   * repository, never from an external host. Each raster size is composed at
+   * its own scale rather than downscaled from one master, so the 16px favicon
+   * still reads as a pane of glass instead of a smudge.
+   */
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
 };
 
 export const viewport: Viewport = {
