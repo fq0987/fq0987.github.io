@@ -1,0 +1,303 @@
+/* ============================================================================
+   SOFT GLASS
+   ============================================================================
+
+   The concept. This site is a study in light passing through tinted glass.
+   Frosted rose and pale azure panes, layered translucency, refracted edges,
+   caustics pooling on the surface below. Content sits behind and inside glass.
+   The pink and the blue are not a decorating choice: dichroic glass physically
+   splits light into rose and azure, so every gradient, shadow and highlight
+   here has a reason. Depth comes from tinted light, never from darkness. The
+   site never goes dark or moody, not even under the Dusk light condition.
+
+   The token contract. Every light condition below defines all of these, and
+   no component may ever hardcode a hex value. The single deliberate exception
+   is a physically coloured object inside a scene, for example the mat of a
+   specific photograph or a prop that is the same colour under every light. Any
+   such value must carry a comment saying why it is fixed.
+
+     --ground --ground-2 --pane                     page ground, deeper ground, panel surface
+     --ink --ink-soft --pane-ink --pane-ink-soft     text on ground, text on panel
+     --line                                          hairline
+     --rose --azure --lilac --blush --sky            the accent family
+     --rose-fg --azure-fg --lilac-fg
+     --blush-fg --sky-fg                             text colour ON each accent fill
+     --rose-deep --azure-deep --lilac-deep           accent as text, on ground, 4.5:1 minimum
+     --glass-tint --glass-edge --glass-spec          the material: fill, refracted edge, specular
+     --shadow-rgb                                    space separated triple, azure tinted, never grey
+     --caustic-1 --caustic-2                         the light pooling under glass
+     --light-warmth                                  the shared light source's character
+     --theme-color                                   address bar meta, equals --ground
+
+   Contrast. Every ratio in this file was computed, not eyeballed, and is
+   recorded beside the pair it belongs to. Body text clears 7:1 against its own
+   surface. All text and meaningful UI clears 4.5:1. Two colours from the
+   original brief failed and were corrected: the rose fill was darkened from
+   #D2417E to #CC3F7A so that white type on it reaches 4.5:1, and every accent
+   used as text carries its own deepened token rather than reusing the fill.
+
+   Ink is navy, not black. Shadows are azure tinted, never neutral grey. The
+   whole site should feel lit, rather than printed.
+   ============================================================================ */
+
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Morning: the default. Palest blush ground, high clear azure, the glass at its most transparent.
+   --------------------------------------------------------------------------- */
+html, html[data-light="morning"] {
+  --ground: #FBF4F7;
+  --ground-2: #F1E7EF;
+  --pane: #FFFBFC;
+
+  --ink: #16203F;            /* on --ground   14.77:1  | on --ground-2 13.27:1 */
+  --ink-soft: #454E77;       /* on --ground   7.43:1 */
+  --pane-ink: #16203F;       /* on --pane     15.59:1 */
+  --pane-ink-soft: #454E77;  /* on --pane     7.84:1 */
+
+  --line: #E6D8E2;          /* hairline, decorative only, never carries meaning alone */
+
+  --rose: #CC3F7A;
+  --azure: #1A63C8;
+  --lilac: #7A4FD6;
+  --blush: #F7D2E1;
+  --sky: #CFE4F8;
+
+  --rose-fg: #FFFFFF;        /* on --rose     4.61:1 */
+  --azure-fg: #FFFFFF;       /* on --azure    5.73:1 */
+  --lilac-fg: #FFFFFF;       /* on --lilac    5.36:1 */
+  --blush-fg: #16203F;       /* on --blush    11.63:1 */
+  --sky-fg: #16203F;         /* on --sky      12.27:1 */
+
+  --rose-deep: #C03B73;      /* on --ground   4.71:1  | on --pane 4.97:1 */
+  --azure-deep: #1A63C8;     /* on --ground   5.29:1  | on --pane 5.59:1 */
+  --lilac-deep: #7A4FD6;     /* on --ground   4.95:1  | on --pane 5.22:1 */
+
+  --glass-tint: rgb(255 251 252 / 0.58);
+  --glass-edge: rgb(204 63 122 / 0.30);
+  --glass-spec: rgb(255 255 255 / 0.88);
+
+  --shadow-rgb: 30 58 120;
+  --caustic-1: rgb(236 178 205 / 0.42);
+  --caustic-2: rgb(170 202 240 / 0.40);
+  --light-warmth: rgb(255 246 250);
+
+  --theme-color: #FBF4F7;
+}
+
+/* ---------------------------------------------------------------------------
+   Overcast: cooler and flatter. Panes sit closer in value, the specular softens, the glass reads matte.
+   --------------------------------------------------------------------------- */
+html[data-light="overcast"] {
+  --ground: #EFF2F6;
+  --ground-2: #E5EAF1;
+  --pane: #F8FAFC;
+
+  --ink: #16223F;            /* on --ground   14.01:1  | on --ground-2 13.01:1 */
+  --ink-soft: #465071;       /* on --ground   7.07:1 */
+  --pane-ink: #16223F;       /* on --pane     15.04:1 */
+  --pane-ink-soft: #465071;  /* on --pane     7.58:1 */
+
+  --line: #DBE1EA;          /* hairline, decorative only, never carries meaning alone */
+
+  --rose: #C63F76;
+  --azure: #1A5FC0;
+  --lilac: #7149C9;
+  --blush: #E9D6E2;
+  --sky: #CBDDF2;
+
+  --rose-fg: #FFFFFF;        /* on --rose     4.80:1 */
+  --azure-fg: #FFFFFF;       /* on --azure    6.10:1 */
+  --lilac-fg: #FFFFFF;       /* on --lilac    6.00:1 */
+  --blush-fg: #16223F;       /* on --blush    11.37:1 */
+  --sky-fg: #16223F;         /* on --sky      11.36:1 */
+
+  --rose-deep: #BD3C71;      /* on --ground   4.62:1  | on --pane 4.96:1 */
+  --azure-deep: #1A5FC0;     /* on --ground   5.43:1  | on --pane 5.83:1 */
+  --lilac-deep: #7149C9;     /* on --ground   5.35:1  | on --pane 5.74:1 */
+
+  --glass-tint: rgb(248 250 252 / 0.66);
+  --glass-edge: rgb(150 165 195 / 0.26);
+  --glass-spec: rgb(255 255 255 / 0.52);
+
+  --shadow-rgb: 38 56 92;
+  --caustic-1: rgb(206 196 216 / 0.30);
+  --caustic-2: rgb(176 198 226 / 0.32);
+  --light-warmth: rgb(244 248 252);
+
+  --theme-color: #EFF2F6;
+}
+
+/* ---------------------------------------------------------------------------
+   Golden: warmer light through the same glass. Rose dominates and azure recedes into the role of a shadow colour.
+   --------------------------------------------------------------------------- */
+html[data-light="golden"] {
+  --ground: #FCF2EC;
+  --ground-2: #F6E5DC;
+  --pane: #FFF9F5;
+
+  --ink: #2A1E3C;            /* on --ground   14.12:1  | on --ground-2 12.72:1 */
+  --ink-soft: #5A4568;       /* on --ground   7.66:1 */
+  --pane-ink: #2A1E3C;       /* on --pane     14.91:1 */
+  --pane-ink-soft: #5A4568;  /* on --pane     8.09:1 */
+
+  --line: #EBD9CE;          /* hairline, decorative only, never carries meaning alone */
+
+  --rose: #C4386F;
+  --azure: #2B4E86;
+  --lilac: #7A4AA8;
+  --blush: #F7D2CE;
+  --sky: #DCE4EF;
+
+  --rose-fg: #FFFFFF;        /* on --rose     5.07:1 */
+  --azure-fg: #FFFFFF;       /* on --azure    8.28:1 */
+  --lilac-fg: #FFFFFF;       /* on --lilac    6.23:1 */
+  --blush-fg: #2A1E3C;       /* on --blush    11.16:1 */
+  --sky-fg: #2A1E3C;         /* on --sky      12.14:1 */
+
+  --rose-deep: #C1376D;      /* on --ground   4.72:1  | on --pane 4.99:1 */
+  --azure-deep: #2B4E86;     /* on --ground   7.51:1  | on --pane 7.93:1 */
+  --lilac-deep: #7A4AA8;     /* on --ground   5.65:1  | on --pane 5.97:1 */
+
+  --glass-tint: rgb(255 249 245 / 0.60);
+  --glass-edge: rgb(196 56 111 / 0.32);
+  --glass-spec: rgb(255 244 232 / 0.90);
+
+  --shadow-rgb: 74 46 62;
+  --caustic-1: rgb(244 194 178 / 0.46);
+  --caustic-2: rgb(214 176 196 / 0.34);
+  --light-warmth: rgb(255 240 226);
+
+  --theme-color: #FCF2EC;
+}
+
+/* ---------------------------------------------------------------------------
+   Dusk: the deepest condition. A dim blue ground lit from somewhere warm, so rose carries the light. Still luminous, never dark.
+   --------------------------------------------------------------------------- */
+html[data-light="dusk"] {
+  --ground: #DEDCEE;
+  --ground-2: #D1CEE5;
+  --pane: #EAE7F6;
+
+  --ink: #191A38;            /* on --ground   12.50:1  | on --ground-2 10.97:1 */
+  --ink-soft: #3F4270;       /* on --ground   7.00:1 */
+  --pane-ink: #191A38;       /* on --pane     13.85:1 */
+  --pane-ink-soft: #3F4270;  /* on --pane     7.76:1 */
+
+  --line: #C6C2DE;          /* hairline, decorative only, never carries meaning alone */
+
+  --rose: #A73464;
+  --azure: #185DBC;
+  --lilac: #6E47C1;
+  --blush: #E7CBDB;
+  --sky: #C4D5ED;
+
+  --rose-fg: #FFFFFF;        /* on --rose     6.33:1 */
+  --azure-fg: #FFFFFF;       /* on --azure    6.30:1 */
+  --lilac-fg: #FFFFFF;       /* on --lilac    6.30:1 */
+  --blush-fg: #191A38;       /* on --blush    11.20:1 */
+  --sky-fg: #191A38;         /* on --sky      11.30:1 */
+
+  --rose-deep: #A73464;      /* on --ground   4.69:1  | on --pane 5.20:1 */
+  --azure-deep: #185DBC;     /* on --ground   4.68:1  | on --pane 5.18:1 */
+  --lilac-deep: #6E47C1;     /* on --ground   4.67:1  | on --pane 5.18:1 */
+
+  --glass-tint: rgb(234 231 246 / 0.62);
+  --glass-edge: rgb(167 52 100 / 0.34);
+  --glass-spec: rgb(255 236 244 / 0.72);
+
+  --shadow-rgb: 34 32 78;
+  --caustic-1: rgb(206 160 186 / 0.40);
+  --caustic-2: rgb(150 168 214 / 0.38);
+  --light-warmth: rgb(250 232 240);
+
+  --theme-color: #DEDCEE;
+}
+
+/* ---------------------------------------------------------------------------
+   Tailwind bridge. Utilities read the tokens above, so a class like text-ink
+   changes meaning when the light condition changes, which is the point.
+   --------------------------------------------------------------------------- */
+@theme inline {
+  --color-ground: var(--ground);
+  --color-ground-2: var(--ground-2);
+  --color-pane: var(--pane);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-pane-ink: var(--pane-ink);
+  --color-pane-ink-soft: var(--pane-ink-soft);
+  --color-line: var(--line);
+  --color-rose: var(--rose);
+  --color-azure: var(--azure);
+  --color-lilac: var(--lilac);
+  --color-blush: var(--blush);
+  --color-sky: var(--sky);
+  --color-rose-fg: var(--rose-fg);
+  --color-azure-fg: var(--azure-fg);
+  --color-lilac-fg: var(--lilac-fg);
+  --color-blush-fg: var(--blush-fg);
+  --color-sky-fg: var(--sky-fg);
+  --color-rose-deep: var(--rose-deep);
+  --color-azure-deep: var(--azure-deep);
+  --color-lilac-deep: var(--lilac-deep);
+
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-source-sans);
+  --font-meta: var(--font-plex-mono);
+}
+
+/* ---------------------------------------------------------------------------
+   The shared light. One controller publishes these on the root element and
+   every pane, highlight and caustic on the page reads from them, which is what
+   makes the site feel like one physical space rather than a stack of sections.
+   The fallback values here are the resting light position, so the site is
+   correctly lit before any JavaScript runs and stays correct if none ever does.
+   --------------------------------------------------------------------------- */
+:root {
+  --light-x: 50%;
+  --light-y: 18%;
+  --light-strength: 1;
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+   --------------------------------------------------------------------------- */
+html {
+  background-color: var(--ground);
+  color-scheme: light;              /* the site has no dark mode, by design */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;                 /* a page that scrolls sideways is a bug */
+}
+
+::selection {
+  background-color: var(--blush);
+  color: var(--blush-fg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--azure-deep);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Reduced motion is a first class path, not a fallback. Everything that loops
+   stops. State changes still happen, they just happen at once. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
