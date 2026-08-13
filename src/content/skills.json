@@ -1,0 +1,55 @@
+{
+  "$comment": "Skills evidenced in Fatima's own files and confirmed by her on 13 August 2026. No proficiency levels are shown because she has not given them. Do not invent levels.",
+  "groups": [
+    {
+      "id": "print",
+      "title": "Print",
+      "note": "Worked at large scale, up to pieces that take two people to lift.",
+      "items": [
+        "Relief and lino printing",
+        "Screen printing",
+        "Monoprinting",
+        "Iron transfer"
+      ]
+    },
+    {
+      "id": "textile",
+      "title": "Textile",
+      "note": "Processes layered on a single surface rather than used alone.",
+      "items": [
+        "Fabric dyeing",
+        "Hand embroidery",
+        "Machine quilting",
+        "Mixed media construction"
+      ]
+    },
+    {
+      "id": "letterform",
+      "title": "Letterform and pattern",
+      "note": "Studied through construction method, not copied.",
+      "items": [
+        "Arabic calligraphy",
+        "Persian illumination, tazhib",
+        "Rumi and Hatayi motif construction"
+      ]
+    },
+    {
+      "id": "drawing",
+      "title": "Drawing and making",
+      "note": "",
+      "items": [
+        "Painting",
+        "Observational drawing",
+        "Wire sculpture",
+        "Plaster and Modroc",
+        "Photography"
+      ]
+    },
+    {
+      "id": "language",
+      "title": "Language",
+      "note": "",
+      "items": ["Arabic", "English"]
+    }
+  ]
+}

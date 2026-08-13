@@ -1,0 +1,11 @@
+{
+  "$comment": "Interests as Fatima listed them on 13 August 2026. Deliberately unelaborated: she gave the list but not her reasons, and nothing here may be invented on her behalf. Each one is designed to stand on its own until she adds a sentence.",
+  "interests": [
+    { "id": "reading", "title": "Reading and writing", "accent": "azure" },
+    { "id": "crafts", "title": "Crafts and making things", "accent": "rose" },
+    { "id": "cooking", "title": "Cooking", "accent": "blush" },
+    { "id": "travel", "title": "Travel", "accent": "sky" },
+    { "id": "music", "title": "Listening to music", "accent": "lilac" },
+    { "id": "dance", "title": "Dance", "accent": "rose" }
+  ]
+}
