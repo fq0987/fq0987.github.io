@@ -15,6 +15,9 @@ export default function SiteNav() {
       </Link>
       <nav className="nav__links" aria-label="Main">
         <Link href="/work">{site.navLabels.work}</Link>
+        <Link href="/about">{site.navLabels.about}</Link>
+        <Link href="/skills">{site.navLabels.skills}</Link>
+        <Link href="/interests">{site.navLabels.interests}</Link>
       </nav>
       <div className="nav__dial">
         <LightPicker />
@@ -37,7 +40,8 @@ export default function SiteNav() {
         }
         .nav__links {
           display: flex;
-          gap: 18px;
+          gap: 16px;
+          flex-wrap: wrap;
           margin-right: auto;
         }
         .nav__links a {

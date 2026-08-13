@@ -1,4 +1,7 @@
+import aboutData from "@/content/about.json";
+import interestsData from "@/content/interests.json";
 import projectsData from "@/content/projects.json";
+import skillsData from "@/content/skills.json";
 import siteData from "@/content/site.json";
 import imagesData from "@/content/images.json";
 
@@ -87,3 +90,33 @@ export function getImage(src: string): ImageMeta {
 /** True once there is enough real content to render a given section. */
 export const hasProjects = projects.length > 0;
 export const hasIdentity = site.nameConfirmed && site.name.length > 0;
+
+/* ---------------------------------------------------------------------------
+   About, skills and interests
+   --------------------------------------------------------------------------- */
+
+export type About = {
+  intro: string;
+  paragraphs: string[];
+  note: string;
+};
+
+export type SkillGroup = {
+  id: string;
+  title: string;
+  /** Optional aside. Empty string means no note, not a missing one. */
+  note: string;
+  items: string[];
+};
+
+export type Interest = {
+  id: string;
+  title: string;
+  accent: Accent;
+};
+
+export const about = aboutData as About;
+
+export const skillGroups = (skillsData as { groups: SkillGroup[] }).groups;
+
+export const interests = (interestsData as { interests: Interest[] }).interests;

@@ -4,6 +4,7 @@ import ConsoleSignature from "@/components/ConsoleSignature";
 import DelightLayer from "@/components/DelightLayer";
 import LightController from "@/components/LightController";
 import { DEFAULT_LIGHT, LIGHT_PREPAINT_SCRIPT, themeColorFor } from "@/lib/light";
+import { site as content } from "@/lib/content";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
@@ -108,6 +109,27 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <a href="#main" className="skip-link">
           Skip to content
         </a>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                name: content.name,
+                email: `mailto:${content.email}`,
+                url: SITE.url,
+                jobTitle: "Artist",
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                name: content.name,
+                url: SITE.url,
+              },
+            ]),
+          }}
+        />
         <LightController />
         <DelightLayer />
         <ConsoleSignature />
