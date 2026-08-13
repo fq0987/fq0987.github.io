@@ -1,4 +1,40 @@
 {
-  "$comment": "Intrinsic pixel dimensions for every image in public/. Recorded here and passed explicitly to next/image so nothing shifts on load. Image optimization is off under static export, so each file is resized and compressed by hand before it is committed.",
-  "images": {}
+  "$comment": "Intrinsic pixel dimensions for every image in public/. Passed explicitly to next/image so nothing shifts on load. Image optimization is off under static export, so each file is resized and compressed by hand before being committed.",
+  "images": {
+    "/work/pomegranate-hero.jpg": {
+      "width": 1500,
+      "height": 2000,
+      "alt": "The finished piece hanging: a deep red ground with a white pomegranate motif and Arabic calligraphy worked over it"
+    },
+    "/work/pomegranate-detail-rumman.jpg": {
+      "width": 1100,
+      "height": 1467,
+      "alt": "Detail of the lower edge, with the Arabic word for pomegranate written in dark calligraphy ink beside the white motif"
+    },
+    "/work/pomegranate-detail-calligraphy.jpg": {
+      "width": 1100,
+      "height": 1467,
+      "alt": "Detail of the dense field of Arabic letters at varying sizes across the red ground"
+    },
+    "/work/pomegranate-before-calligraphy.jpg": {
+      "width": 1300,
+      "height": 975,
+      "alt": "The printed cloth laid flat before the calligraphy was added, showing the pomegranate motif on its own"
+    },
+    "/work/pomegranate-block.jpg": {
+      "width": 1100,
+      "height": 1467,
+      "alt": "The relief block, carved at full scale with the pomegranate and the leaf forms surrounding it"
+    },
+    "/work/pomegranate-block-detail.jpg": {
+      "width": 1000,
+      "height": 750,
+      "alt": "Close detail of the carved block, showing the cut lines through the leaf and flower forms"
+    },
+    "/work/pomegranate-print-pulled.jpg": {
+      "width": 1100,
+      "height": 1467,
+      "alt": "A print freshly pulled from the block, the motif standing pale against the red ground"
+    }
+  }
 }

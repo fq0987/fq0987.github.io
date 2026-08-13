@@ -1,10 +1,10 @@
 {
-  "$comment": "Every string on this site lives in src/content. Components import from src/lib/content.ts and never contain copy. Fields are empty until Fatemeh supplies them. Nothing here may be invented.",
-  "name": "",
-  "nameConfirmed": false,
+  "$comment": "Every string on this site lives in src/content. Components import from src/lib/content.ts and never contain copy. Nothing here may be invented: every field traces back to something Fatima supplied.",
+  "name": "Fatima Qudsi",
+  "nameConfirmed": true,
   "tagline": "",
   "location": "",
-  "email": "",
+  "email": "fatima.qudsi0987@gmail.com",
   "links": [],
   "navLabels": {
     "home": "Home",

@@ -1,4 +1,32 @@
 {
-  "$comment": "One entry per project. Empty until supplied. accent must be one of: rose, azure, lilac, blush, sky.",
-  "projects": []
+  "$comment": "One entry per project. bodyHtml is written from what Fatima described, rewritten rather than quoted, at her request. No fact appears here that she did not give.",
+  "projects": [
+    {
+      "slug": "pomegranate-of-heaven",
+      "title": "The Pomegranate of Heaven",
+      "role": "Textile and mixed media",
+      "dateText": "2026",
+      "locationText": "Doha, Qatar",
+      "tags": [
+        "Relief print",
+        "Hand embroidery",
+        "Arabic calligraphy",
+        "Textile",
+        "Mixed media"
+      ],
+      "shortDescription": "A pomegranate carved at full scale, printed onto cloth, then buried under Arabic letters. Made for a project on communication, and about how a fruit can carry meaning without saying anything.",
+      "bodyHtml": "<p>My theme was communication, and I wanted to answer it through faith rather than through speech. Certain fruits carry specific meanings in Islam and are named in the Quran, and that felt like the quietest kind of communication I could think of: a thing that means something without ever announcing it. The pomegranate became the way in.</p><p>The image was cut into lino at full scale, then printed onto canvas fabric in deep red. After that the surface kept accumulating. Stencil paint, acrylic, linseed oil, hand embroidery worked directly into the cloth, and pieces of red fabric quilted on a machine and fixed down with fabric glue. It stopped being a print somewhere in the middle and became a textile.</p><p>The calligraphy went on last and covers most of the ground. Arabic letters at many different sizes, drawn with a calligraphy pen, and over the top of those a heavier, darker hand carrying the words the piece is named for: the pomegranate of heaven.</p><p>It took about a week, though I worked in bursts and never counted the hours, so it was probably more than that.</p>",
+      "heroImage": "/work/pomegranate-hero.jpg",
+      "gallery": [
+        "/work/pomegranate-detail-rumman.jpg",
+        "/work/pomegranate-detail-calligraphy.jpg",
+        "/work/pomegranate-before-calligraphy.jpg",
+        "/work/pomegranate-block.jpg",
+        "/work/pomegranate-block-detail.jpg",
+        "/work/pomegranate-print-pulled.jpg"
+      ],
+      "links": [],
+      "accent": "rose"
+    }
+  ]
 }
