@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import GlassImage from "@/components/GlassImage";
 import SiteFooter from "@/components/SiteFooter";
 import SiteNav from "@/components/SiteNav";
-import { projects, site } from "@/lib/content";
+import { about, interests, projects, site, skillGroups } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: `${site.name}`,
@@ -63,6 +63,36 @@ export default function Home() {
             </div>
           </section>
         ) : null}
+
+        <section className="strip">
+          <div className="strip__col">
+            <h2 className="strip__title">About</h2>
+            <p className="strip__body">{about.intro}</p>
+            <Link href="/about" className="strip__link">
+              Read more
+            </Link>
+          </div>
+
+          <div className="strip__col">
+            <h2 className="strip__title">Skills</h2>
+            <p className="strip__body">
+              {skillGroups.map((group) => group.title).join(", ")}.
+            </p>
+            <Link href="/skills" className="strip__link">
+              See all
+            </Link>
+          </div>
+
+          <div className="strip__col">
+            <h2 className="strip__title">Interests</h2>
+            <p className="strip__body">
+              {interests.map((interest) => interest.title).join(", ")}.
+            </p>
+            <Link href="/interests" className="strip__link">
+              See all
+            </Link>
+          </div>
+        </section>
       </main>
 
       <SiteFooter />
@@ -155,6 +185,42 @@ export default function Home() {
           text-decoration: none;
         }
         .feature__link:hover { background: var(--pane); }
+
+        .strip {
+          margin: clamp(64px, 11vw, 130px) 0 0;
+          padding-top: clamp(32px, 5vw, 52px);
+          border-top: 1px solid var(--line);
+          display: grid;
+          gap: clamp(28px, 4vw, 44px);
+        }
+        @media (min-width: 780px) {
+          .strip { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
+        .strip__title {
+          margin: 0 0 12px;
+          font-family: var(--font-meta), ui-monospace, monospace;
+          font-size: 11px;
+          font-weight: 400;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          color: var(--azure-deep);
+        }
+        .strip__body {
+          margin: 0;
+          max-width: 42ch;
+          line-height: 1.62;
+          color: var(--ink-soft);
+        }
+        .strip__link {
+          display: inline-block;
+          margin-top: 14px;
+          font-family: var(--font-meta), ui-monospace, monospace;
+          font-size: 12px;
+          color: var(--rose-deep);
+          text-decoration: none;
+          border-bottom: 1px solid var(--glass-edge);
+        }
+        .strip__link:hover { color: var(--azure-deep); }
       `}</style>
     </>
   );
