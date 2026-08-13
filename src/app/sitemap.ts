@@ -22,7 +22,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Only routes that actually exist. Listing /work before the work index is
   // built would put a 404 in the sitemap, which is worse than omitting it.
-  const paths = ["", ...(projects.length > 0 ? ["/work"] : [])];
+  const paths = [
+    "",
+    "/about",
+    "/skills",
+    "/interests",
+    ...(projects.length > 0 ? ["/work"] : []),
+  ];
 
   const staticRoutes = paths.map((path) => ({
     url: `${SITE.url}${path}/`,
